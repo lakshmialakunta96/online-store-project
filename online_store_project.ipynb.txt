@@ -1,0 +1,111 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5sg89bfQJzbC",
+        "outputId": "ff9c97d4-3019-4d29-a916-c1ca834499d7"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Files created successfully!\n"
+          ]
+        }
+      ],
+      "source": [
+        "html_code = \"\"\"\n",
+        "<!DOCTYPE html>\n",
+        "<html>\n",
+        "<head>\n",
+        "<title>E-Commerce Product Catalog</title>\n",
+        "<link rel=\"stylesheet\" href=\"style.css\">\n",
+        "</head>\n",
+        "<body>\n",
+        "\n",
+        "<h1>My Product Catalog</h1>\n",
+        "\n",
+        "<div class=\"product\">\n",
+        "  <h2>Smartphone</h2>\n",
+        "    <p>Price: ₹15,000</p>\n",
+        "      <button onclick=\"addToCart('Smartphone')\">Add to Cart</button>\n",
+        "      </div>\n",
+        "\n",
+        "      <div class=\"product\">\n",
+        "        <h2>Laptop</h2>\n",
+        "          <p>Price: ₹45,000</p>\n",
+        "            <button onclick=\"addToCart('Laptop')\">Add to Cart</button>\n",
+        "            </div>\n",
+        "\n",
+        "            <h3 id=\"cart\">Cart: Empty</h3>\n",
+        "\n",
+        "            <script src=\"script.js\"></script>\n",
+        "\n",
+        "            </body>\n",
+        "            </html>\n",
+        "            \"\"\"\n",
+        "\n",
+        "css_code = \"\"\"\n",
+        "body{\n",
+        "  font-family: Arial;\n",
+        "    text-align:center;\n",
+        "      margin:20px;\n",
+        "      }\n",
+        "\n",
+        "      .product{\n",
+        "        border:1px solid #ccc;\n",
+        "          padding:15px;\n",
+        "            margin:15px;\n",
+        "              border-radius:10px;\n",
+        "              }\n",
+        "\n",
+        "              button{\n",
+        "                padding:10px;\n",
+        "                  cursor:pointer;\n",
+        "                  }\n",
+        "                  \"\"\"\n",
+        "\n",
+        "js_code = \"\"\"\n",
+        "let items = [];\n",
+        "\n",
+        "function addToCart(product){\n",
+        "  items.push(product);\n",
+        "    document.getElementById(\"cart\").innerHTML =\n",
+        "      \"Cart: \" + items.join(\", \");\n",
+        "      }\n",
+        "      \"\"\"\n",
+        "\n",
+        "with open(\"index.html\",\"w\") as f:\n",
+        "    f.write(html_code)\n",
+        "\n",
+        "    with open(\"style.css\",\"w\") as f:\n",
+        "        f.write(css_code)\n",
+        "\n",
+        "        with open(\"script.js\",\"w\") as f:\n",
+        "            f.write(js_code)\n",
+        "\n",
+        "            print(\"Files created successfully!\")"
+      ]
+    }
+  ]
+}
